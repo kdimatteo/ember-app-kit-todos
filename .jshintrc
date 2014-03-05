@@ -7,7 +7,10 @@
     "Ember": true,
     "Em": true,
     "DS": true,
-    "$": true
+    "$": true,
+    "Orbit": true, //?
+    "OC": true,
+    "console": true
   },
   "node" : false,
   "browser" : false,

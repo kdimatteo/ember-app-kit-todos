@@ -28,22 +28,31 @@ export default Ember.ArrayController.extend({
     createTodo: function () {
       // Get the todo title set by the "New Todo" text field
       var title = this.get('newTitle');
+      
+      /*
+      // if the title is already set or not a string:
       if (title && !title.trim()) { 
         this.set('newTitle', ''); 
         return; 
       }
+      */
+      
+      this.get('model').save({title:title, isCompleted:false});
 
-      // Create the new Todo model
+
+      /*
+      // Create the new Todo model, DS.Store way:
       var todo = this.store.createRecord('todo', {
         title: title,
         isCompleted: false
       });
 
-      // Clear the "New Todo" text field
-      this.set('newTitle', '');
-
       // Save the new model
       todo.save();
+      */
+
+      // Clear the "New Todo" text field
+      this.set('newTitle', '');
     },
 
     clearCompleted: function () {
