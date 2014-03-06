@@ -1,9 +1,15 @@
 // models/todo.js
 var Todo = DS.Model.extend({
   title: DS.attr('string'),
-  isCompleted: DS.attr('boolean')
-});
+  isCompleted: DS.attr('boolean'),
 
+  init:function(){
+    this._super();
+    console.log("model int---")
+  }
+
+});
+/*
 Todo.reopenClass({
   FIXTURES: [
   {
@@ -20,5 +26,6 @@ Todo.reopenClass({
     isCompleted: false
   }
 ]});
+*/
 
 export default Todo;
