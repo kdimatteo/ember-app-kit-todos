@@ -6,6 +6,8 @@ Router.map(function(){
     this.route('active');
     this.route('completed');
   });
+  this.resource('users', { path: '/users' }, function() {
+  });
 });
 
 export default Router;
