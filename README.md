@@ -2,7 +2,7 @@
 
 ember-app-kit-todos is the Emberjs Todos using Ember App Kit.
 
-*Modified to use orbitJS for localstorage in the adapter*
+*Modified to use [orbitJS](https://github.com/orbitjs/orbit.js) for localstorage in the adapter*
 
 ## Try ember-app-kit-todos
 
