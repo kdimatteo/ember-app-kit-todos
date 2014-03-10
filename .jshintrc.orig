@@ -7,10 +7,17 @@
     "Ember": true,
     "Em": true,
     "DS": true,
+<<<<<<< HEAD
+    "$": true,
+    "Orbit": true, //?
+    "OC": true,
+    "console": true
+=======
     "console": true,
     "OC": true,
     "Orbit": true,
     "$": true
+>>>>>>> orbit-adapter
   },
   "node" : false,
   "browser" : false,

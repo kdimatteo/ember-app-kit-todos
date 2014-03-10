@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+//export default DS.FixtureAdapter.extend();
+
+export default DS.ActiveModelAdapter.extend({
+  //namespace: window.ENV.api.namespace,
+  //host: window.ENV.api.host
+});
+
+=======
 export default DS.Adapter.extend({
   orbitSource: undefined,
   dataStore: undefined,
@@ -68,3 +77,4 @@ export default DS.Adapter.extend({
 });
 
 //export default DS.FixtureAdapter.extend();
+>>>>>>> orbit-adapter

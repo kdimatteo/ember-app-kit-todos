@@ -1,0 +1,100 @@
+import TodoConnector from 'appkit/models/todo_connector';
+
+export default Ember.Object.extend({
+//var Todo = DS.Model.extend({
+
+  //title: DS.attr('string'),
+  //isCompleted: DS.attr('boolean'),
+
+  memorySource: null,
+  name: null,
+  orbitStore: null,
+  
+  /*
+  restSource: null,
+  localSource: null,
+  memToLocalConnector: null,
+  memToRestConnector: null,
+  restToMemConnector: null,
+  */
+
+  init: function(){
+    
+    this._super.apply(this, arguments);
+ 
+    var schema = {
+      idField: 'id',
+      models: {
+        todo: {
+          title: {type: 'string'},
+          isCompleted: {type: 'boolean'}
+        }
+      }
+    };
+
+
+    var localSource = new OC.LocalStorageSource(schema, {
+      namespace: this.get('name')
+    });
+
+    //var restSource = new OC.JSONAPISource(schema, {
+    //  namespace: this.get('name')
+    //});
+    
+    this.set('memorySource', localSource);
+
+    localSource.on('didTransform', function(operation, inverse) {
+      console.log(' ::: didTransform', operation, inverse);
+    });
+
+    //this.reload();
+    
+    /*this.localSource = new OC.LocalStorageSource(this._schema);
+
+    // Connect MemorySource -> LocalStorageSource (using the default blocking strategy)
+    this.memToLocalConnector = new Orbit.TransformConnector(this.memorySource, this.localSource);
+
+    // Connect MemorySource <-> JSONAPISource (using the default blocking strategy)
+    this.memToRestConnector = new Orbit.TransformConnector(this.memorySource, this.restSource);
+    this.restToMemConnector = new Orbit.TransformConnector(this.restSource, this.memorySource);
+    */
+  },
+
+  save: function(s){
+    console.log("SAVE", s);
+  },
+
+  reload: function() {
+    var _this = this;
+    console.log("reloaded");
+    this.get('orbitStore').find('todo').then(function(todos) {
+      _this.set('todos', todos);
+    });
+  },
+
+  //FIXTURES: [],
+
+});
+/*
+Todo.reopenClass({
+  FIXTURES: [{
+    id: "1",
+    title: 'install EAK',
+    isCompleted: true
+  }]
+});
+*/
+
+/*
+// models/todo.js
+export default = DS.Model.extend({
+  title: DS.attr('string'),
+  isCompleted: DS.attr('boolean'),
+
+});
+
+<<<<<<< HEAD
+export default Todo;
+*/
+=======
+>>>>>>> orbit-adapter

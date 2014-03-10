@@ -1,6 +1,8 @@
-# ember-app-kit-todos [![Build Status](https://travis-ci.org/stefanpenner/ember-app-kit-todos.png?branch=master)](https://travis-ci.org/stefanpenner/ember-app-kit-todos)
+# ember-app-kit-todos
 
 ember-app-kit-todos is the Emberjs Todos using Ember App Kit.
+
+/Modified to use orbitJS for localstorage in the adapter/
 
 ## Try ember-app-kit-todos
 
